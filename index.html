@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Learning</title>
+
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!--Import vue3 package-->
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="vueApp">
+        <div class="nav-bar"></div>
+        <div class="wrapper">
+            <div class="cart">Cart({{ cart.length }})</div>
+            <product-display :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeCart"></product-display>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="components/productDisplay.js"></script>
+    <script src="components/productDetails.js"></script>
+    <script src="components/reviewForm.js"></script>
+    <script src="components/reviewList.js"></script>
+    <script>
+        const mountedApp = app.mount('#vueApp');
+    </script>
+</body>
+</html>
